@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div#wrapper {
+        position: relative;
+      }
+      .box {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+      }
+      #b1 {
+        z-index: 3;
+        background-color: red;
+      }
+      #b2 {
+        top: 10px;
+        z-index: 2;
+        background-color: yellow;
+      }
+      #b3 {
+        z-index: 1;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="box" id="b1">1</div>
+      <div class="box" id="b2">2</div>
+      <div class="box" id="b3">3</div>
+    </div>
+  </body>
+</html>
