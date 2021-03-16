@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: inline-block;
+      }
+      .origin {
+        transform: rotateZ(10deg);
+      }
+      .ltop {
+        transform-origin: left top;
+      }
+      .rtop {
+        transform-origin: right top;
+      }
+      .lbottom {
+        transform-origin: left bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="origin">
+      <div class="ltop"><img src="images/rose.jpg" alt="" /></div>
+    </div>
+    <div class="origin">
+      <div class="rtop"><img src="images/rose.jpg" alt="" /></div>
+    </div>
+    <div class="origin">
+      <div class="lbottom"><img src="images/rose.jpg" alt="" /></div>
+    </div>
+    <div class="origin">
+      <div class="rbottom"><img src="images/rose.jpg" alt="" /></div>
+    </div>
+  </body>
+</html>
