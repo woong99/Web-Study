@@ -1,0 +1,55 @@
+@import 'reset.css';
+.responsive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 81px;
+  background-color: #263343;
+  color: white;
+}
+
+.header-left {
+  font-size: 24px;
+  margin-left: 10px;
+}
+.header-left i {
+  color: #d49465;
+}
+.header-menus {
+  display: flex;
+}
+.header-menus .header-menu {
+  padding: 10px;
+}
+.header-menus .header-menu:hover {
+  border-radius: 5px;
+  background-color: #d49465;
+}
+.header-right {
+  margin-right: 15px;
+}
+.header-right i {
+  margin: 10px;
+}
+
+.mobile-header-right {
+  margin-right: 30px;
+  color: #d49465;
+}
+@media screen and (max-width: 768px) {
+  .header-menus,
+  .header-right {
+    display: none;
+  }
+  .header-elements {
+    height: 46px;
+  }
+  .header-left {
+    margin-left: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mobile-header-right {
+    display: none;
+  }
+}
