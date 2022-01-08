@@ -4,16 +4,16 @@ obj = { name: 'Mark' };
 
 obj = [{ name: 'Mark' }];
 
-obj = 39;
+// obj = 39;
 
-obj = 'Mark';
+// obj = 'Mark';
 
-obj = true;
+// obj = true;
 
-obj = 100n;
+// obj = 100n;
 
-obj = Symbol();
+// obj = Symbol();
 
-obj = null;
+// obj = null;
 
-obj = undefined;
+// obj = undefined;

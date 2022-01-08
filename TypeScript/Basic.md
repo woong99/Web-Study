@@ -178,3 +178,45 @@ obj = null; // Error
 obj = undefined;    // Error
 
 ```
+
+---
+
+## Array & Tuple
+
+Array는 객체이다.
+
+```TS
+// --------------Array---------------
+// 배열에 들어가는 타입이 다르면 유니온을 이용해 해결
+let list1: (number | String)[] = [1, 2, 3, '4']; // 이걸 더 선호
+
+let list2: Array<Number> = [1, 2, 3];
+
+// --------------Tuple---------------
+let x: [string, number];
+x = ['hello', 2];
+
+// x = [10, 'hello'];
+
+// x[3] = 'world';
+
+const person: [string, number] = ['Mark', 39];
+const [first, second] = person;
+
+```
+
+Array 는 타입을 지정할 때 순서 상관없이 가능하다.
+Tuple 은 타입 지정 순서에 맞게 값을 할당해야한다.
+
+---
+
+## Any
+
+- 어떤 타입이어도 상관없는 타입
+- `최대한 쓰지 않는게 핵심`
+  - 컴파일 타임에 타입 체크가 정상적으로 이뤄지지 않기 때문
+  - 그래서 컴파일 옵션 중에는 any 를 써야하는데 쓰지 않으면 오류를 뱉도록 하는 옵션 존재(`noImplicitAny`)
+
+```TS
+
+```
