@@ -210,13 +210,53 @@ Tuple 은 타입 지정 순서에 맞게 값을 할당해야한다.
 
 ---
 
-## Any
+## Any & Unknown
+
+### Any
 
 - 어떤 타입이어도 상관없는 타입
 - `최대한 쓰지 않는게 핵심`
   - 컴파일 타임에 타입 체크가 정상적으로 이뤄지지 않기 때문
   - 그래서 컴파일 옵션 중에는 any 를 써야하는데 쓰지 않으면 오류를 뱉도록 하는 옵션 존재(`noImplicitAny`)
 
-```TS
+### Unknown
 
+- Typescript 3.0 버전부터 지원
+- any와 짝으로 any보다 `Type-safe`한 타입
+  - any와 같이 아무거나 할당 가능
+  - 컴파일러가 타입을 추론할 수 있게끔 타입의 유형을 좁히거나
+  - 타입을 확정해주지 않으면 다른 곳에 할당할 수 없고, 사용할 수 없음
+- unknown 타입을 사용하면 Runtime Error를 줄일 수 있을 것 같다
+  - 사용 전에 데이터의 일부 유형의 검사를 수행해야 함을 알리는 API에 사용할 수 있을 것 같다
+
+```TS
+function returnAny(msg: any): any {
+  console.log(msg);
+}
+const any1 = returnAny('아무거나');
+
+any1.toString(); // 가능
 ```
+
+```TS
+declare const maybe: unknown;
+
+
+const aNumber: number = maybe;  // Error
+
+if (maybe === true) {
+  const aBoolean: boolean = maybe;
+}
+if (typeof maybe === 'string') {
+  const aString: string = maybe;
+}
+```
+
+---
+
+## Never
+
+- never 타입은 모든 타입의 subtype 이며, 모든 타입에 할당 가능
+- 하지만, never 에는 그 어떤 것도 할당할 수 없음
+- any 조차도 never 에게 할당할 수 없음
+- 잘못된 타입을 넣는 실수를 막고자 할 때 사용하기도 함
