@@ -4,3 +4,4 @@ package.json
 tsconfig.json
 .DS_Store
 test.ts
+test.js
