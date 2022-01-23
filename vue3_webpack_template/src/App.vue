@@ -1,13 +1,18 @@
 <template>
-	<h1>{{ msg }}</h1>
+	<input v-model="msg" type="text" />
 </template>
 
 <script>
 export default {
 	data() {
 		return {
-			msg: 'hello',
+			msg: 'Hello World!',
 		};
+	},
+	watch: {
+		msg() {
+			console.log(this.msg);
+		},
 	},
 };
 </script>
